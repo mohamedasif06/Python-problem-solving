@@ -5,7 +5,7 @@ from helpers import calculate_total, format_currency
 df = pd.read_csv('output/sales_data.csv')
 print(df)
 totals=[]
-for index,rows in df.iterrows():
+for index,rows in df.iterrows(): # df.iterrows() is used for iterating through all rows in DF
     total = calculate_total(rows['quantity'],rows['price'])
     totals.append(total)
 
@@ -23,4 +23,4 @@ def calculate_total(quantity,price):
     return quantity*price
 
 def format_currency(amount):
-    return f"${amount:,.2f}"
+    return f"${amount:,.2f}" #printing the amount with 2 decimals
